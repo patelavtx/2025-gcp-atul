@@ -1,0 +1,35 @@
+azspoke1:
+  account: AZ-proj
+  cloud: Azure
+  name: azspoke201-uks
+  region: UK South
+  cidr: 10.201.201.0/24
+  ha_gw: false
+  insane_mode: false
+  instance_size: Standard_B1ms  
+  transit_gw: az-uks-transit200
+
+
+gcpspoke1:
+  account: GCP-proj
+  cloud: GCP
+  name: gcpspoke211-eu4
+  region: europe-west4
+  cidr: 10.211.211.0/24
+  ha_gw: false
+  insane_mode: false
+  instance_size: n1-standard-1           
+  transit_gw: gcp-euwest4-transit210
+
+azspoke2:
+  account: AZ-proj
+  cloud: Azure
+  name: azspoke202-uks
+  region: UK South
+  cidr: 10.202.202.0/24
+  ha_gw: false
+  insane_mode: false
+  instance_size: Standard_B1ms
+  transit_gw: az-uks-transit200 
+
+

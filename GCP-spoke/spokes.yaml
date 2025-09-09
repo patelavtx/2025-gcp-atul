@@ -1,0 +1,37 @@
+gcpspoke1:
+  account: GCP-proj
+  cloud: GCP
+  name: gcpspoke1-usw1
+  region: us-west1
+  cidr: 10.172.165.0/24
+  ha_gw: false
+  insane_mode: false
+  instance_size: n1-standard-1           #n1-standard-1 ; hpe requires 'n1-standard-4', 'n1-standard-8', 'n1-standard-16', 'n1-standard-32', 'n1-standard-64', 'n1-standard-96' etc
+  #network_domain: netdomain1
+  transit_gw: gcp-uswest1-65
+
+gcpspoke2:
+  account: GCP-proj
+  cloud: GCP
+  name: gcpspoke2-ase1
+  region: asia-southeast1
+  cidr: 10.172.166.0/24
+  ha_gw: false
+  insane_mode: false
+  instance_size: n1-standard-1           #n1-standard-1 ; hpe requires 'n1-standard-4', 'n1-standard-8', 'n1-standard-16', 'n1-standard-32', 'n1-standard-64', 'n1-standard-96' etc
+  #network_domain: netdomain1
+  transit_gw: gcp-apacse1-66
+  #enable_global_vpc: true  
+
+gcpspoke3:
+  account: GCP-proj
+  cloud: GCP
+  name: gcpspoke3-euw2
+  region: europe-west2
+  cidr: 10.172.167.0/24
+  ha_gw: false
+  insane_mode: false
+  instance_size: n1-standard-1           #n1-standard-1 ; hpe requires 'n1-standard-4', 'n1-standard-8', 'n1-standard-16', 'n1-standard-32', 'n1-standard-64', 'n1-standard-96' etc
+  #network_domain: netdomain1
+  transit_gw: gcp-euw2-67
+  #enable_global_vpc: true  

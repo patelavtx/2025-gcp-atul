@@ -1,0 +1,78 @@
+gcptransit1:
+  transit_name        : gcp-uswest1-65
+  transit_cloud       : gcp
+  transit_cidr        : 10.172.65.0/24
+  #transit_lan_cidr    : 10.210.16.0/20
+  transit_region_name : us-west1
+  transit_asn         : 65065
+  transit_instance_size : n1-standard-1
+  transit_insane_mode       : false
+  transit_enable_transit_firenet : false
+  transit_enable_multi_tier_transit : false       #  added for Brownfield GCP Hybrid connectivity - BGPoLAN
+  # transit_learned_cidr_approval : true            #  inject routes in net2 cr to get net1 connectivity, use here or MTT tx 
+  firenet             : false
+  ha_gw               : false
+  #transit_enable_bgp_over_lan : true
+  #transit_bgp_lan_interfaces:
+  #  -
+  #    vpc_id: gcp-native30
+  #    subnet: 10.30.30.0/24
+  #transit_ha_bgp_lan_interfaces:
+  #  -
+  #    vpc_id: gcp-native30
+  #    subnet: 10.30.30.0/24
+
+gcptransit2:
+  transit_name        : gcp-apacse1-66
+  transit_cloud       : gcp
+  transit_cidr        : 10.172.66.0/24
+  #transit_lan_cidr    : 10.210.16.0/20
+  transit_region_name : asia-southeast1
+  transit_asn         : 65066
+  transit_instance_size : n1-standard-1
+  transit_insane_mode       : false
+  transit_enable_transit_firenet : false
+  transit_enable_multi_tier_transit : false       #  added for Brownfield GCP Hybrid connectivity - BGPoLAN
+  # transit_learned_cidr_approval : true            #  inject routes in net2 cr to get net1 connectivity, use here or MTT tx 
+  firenet             : false
+  ha_gw               : false
+  #transit_enable_bgp_over_lan : true
+  #transit_bgp_lan_interfaces:
+  #  -
+  #    vpc_id: gcp-native30
+  #    subnet: 10.30.30.0/24
+  #transit_ha_bgp_lan_interfaces:
+  #  -
+  #    vpc_id: gcp-native30
+  #    subnet: 10.30.30.0/24
+
+
+
+#   Above example of adding bgp details to yaml
+#  YAML,  remember couldn't reference variables and data resources.
+#  since attaching to 'existing' environment then this can be filled in
+
+
+gcptransit3:
+  transit_name        : gcp-euw2-67
+  transit_cloud       : gcp
+  transit_cidr        : 10.172.67.0/24
+  #transit_lan_cidr    : 10.210.16.0/20
+  transit_region_name : europe-west2
+  transit_asn         : 65067
+  transit_instance_size : n1-standard-1
+  transit_insane_mode       : false
+  transit_enable_transit_firenet : false
+  transit_enable_multi_tier_transit : false       #  added for Brownfield GCP Hybrid connectivity - BGPoLAN
+  # transit_learned_cidr_approval : true            #  inject routes in net2 cr to get net1 connectivity, use here or MTT tx 
+  firenet             : false
+  ha_gw               : false
+  #transit_enable_bgp_over_lan : true
+  #transit_bgp_lan_interfaces:
+  #  -
+  #    vpc_id: gcp-native30
+  #    subnet: 10.30.30.0/24
+  #transit_ha_bgp_lan_interfaces:
+  #  -
+  #    vpc_id: gcp-native30
+  #    subnet: 10.30.30.0/24

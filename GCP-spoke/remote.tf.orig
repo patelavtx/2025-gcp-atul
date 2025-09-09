@@ -1,0 +1,12 @@
+data "terraform_remote_state" "coretransit" {
+  backend = "remote"
+
+  config = {
+    organization = "avtx"
+
+    workspaces = {
+      name = "BTL-core"
+    }
+  }
+}
+

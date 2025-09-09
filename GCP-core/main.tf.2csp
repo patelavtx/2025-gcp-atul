@@ -1,0 +1,28 @@
+#https://registry.terraform.io/modules/terraform-aviatrix-modules/mc-transit-deployment-framework/aviatrix/latest
+# terraform-aviatrix-modules/backbone/aviatrix
+# Test4 - prep for spokes
+
+#  superceded by 'backbone' source which also supports sw 7.1 onwards
+module "transit_adoption_framework" {
+#  source  = "terraform-aviatrix-modules/backbone/aviatrix"
+#  version = "v1.1.1"
+source  = "terraform-aviatrix-modules/backbone/aviatrix"
+  version = "1.2.2"
+
+  default_transit_accounts = {
+    azure = var.azure_account,
+    gcp = var.gcp_account,
+  }
+  
+  peering_mode = "custom"
+  peering_map = {
+    multicloud_peering : {
+      gw1_name = module.transit_adoption_framework.transit["aztransit1"].transit_gateway.gw_name,
+      gw2_name = module.transit_adoption_framework.transit["gcptransit1"].transit_gateway.gw_name,
+    }
+  }
+
+  transit_firenet = yamldecode(file("transit.yaml"))
+
+
+}

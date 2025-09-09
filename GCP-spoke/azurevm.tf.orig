@@ -1,0 +1,31 @@
+# Create test instance, can add to TF registry
+module "azure-linuxvm-spoke1" {
+  source = "github.com/patelavtx/azure-linux-passwd.git"
+  #source = "github.com/patelavtx/terraform-azure-azure-linux-vm-public.git"
+  #public_key_file = var.public_key_file
+  region = module.spokes["azspoke1"].vpc.region
+  resource_group_name = module.spokes["azspoke1"].vpc.resource_group
+  subnet_id = module.spokes["azspoke1"].vpc.subnets[1].subnet_id
+  vm_name = "spoke1-test-vm"
+}
+
+
+module "azure-linuxvm-spoke2" {
+  source = "github.com/patelavtx/azure-linux-passwd.git"
+  #source = "github.com/patelavtx/terraform-azure-azure-linux-vm-public.git"
+  #public_key_file = var.public_key_file
+  region = module.spokes["azspoke2"].vpc.region
+  resource_group_name = module.spokes["azspoke2"].vpc.resource_group
+  subnet_id = module.spokes["azspoke2"].vpc.subnets[1].subnet_id
+  vm_name = "spoke2-test-vm"
+}
+
+
+output "spoke1-vm" {
+  value = module.azure-linuxvm-spoke1
+}
+
+output "spoke2-vm" {
+  value = module.azure-linuxvm-spoke2
+}
+

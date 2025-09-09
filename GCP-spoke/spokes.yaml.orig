@@ -1,0 +1,41 @@
+#azspoke1:
+#  account: AZ-proj
+#  cloud: Azure
+#  name: azspoke201-uks
+#  region: UK South
+#  cidr: 10.201.201.0/24
+#  ha_gw: false
+#  insane_mode: true
+#  instance_size: Standard_D3_v2       #Standard_B1ms ; remember quota increase
+#  instance_size: Standard_B1ms  
+#  #network_domain: netdomain1
+#  transit_gw: az-uks-transit200
+# enable_bgp: false
+#  #local_as_number: 65201
+
+gcpspoke1:
+  account: GCP-proj
+  cloud: GCP
+  name: gcpspoke211-eu4
+  region: europe-west4
+  cidr: 10.211.211.0/24
+  ha_gw: false
+  insane_mode: false
+  instance_size: n1-standard-1           #n1-standard-1 ; hpe requires 'n1-standard-4', 'n1-standard-8', 'n1-standard-16', 'n1-standard-32', 'n1-standard-64', 'n1-standard-96' etc
+  #network_domain: netdomain1
+  transit_gw: gcp-euwest4-transit210
+
+#azspoke2:
+#  account: AZ-proj
+#  cloud: Azure
+#  name: azspoke202-uks
+#  region: UK South
+#  cidr: 10.202.202.0/24
+#  ha_gw: false
+#  insane_mode: true
+# instance_size: Standard_B1ms
+#  instance_size: Standard_D3_v2
+  #network_domain: netdomain2
+#  transit_gw: az-uks-transit200 
+
+
